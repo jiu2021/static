@@ -30,26 +30,22 @@
 
 提供这样的服务其实很多，只是**没有绝对的免费**，一般是提供小容量的免费存储
 
-举个我用过的：
-
-[熊猫图床](https://www.pandaimg.com/)
+举个我用过的：[熊猫图床](https://www.pandaimg.com/)
 
 来张图片，你自行体会
 
-![](http://jiu99.online:8080/imgStore_build/1.png)
+[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-lRmH0clk-1661587908974)(https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/01548d18dd4148149a94b254248162e1~tplv-k3u1fbpfcp-zoom-1.image)]
 
-**注**：肯定更好的图床，而且这样的国外网站较多，需要自己去挖掘。但一般国外网站有些通病：国内访问速度过慢，甚至直接被墙。
+**注**：肯定更好的图床，而且这样的国外网站较多，需要自己去挖掘。但一般国外网站有些**通病：国内访问速度过慢，甚至直接被墙。**
 
 - 优点：专业，图片管理方便，链接可持久
 - 缺点：非充钱用户的种种限制，命运还是在第三方手里（假如一个小平台，人人都白嫖，人家不赚钱了还给你服务？万一停服图片丢失损失太大）。好吧其实最大的缺点是**不够酷**（我自己有服务器干嘛要去舔别人
 
-中途我还尝试过**github图床**，不过github原链接访问速度实在感人，网上推荐的使用**jsDelivr** cdn 加速，貌似在国内的服务也挂了,详情看下文：
+中途我还尝试过**github图床**，不过github原链接访问速度实在感人，网上推荐的使用**jsDelivr** cdn 加速，貌似在国内的服务也挂了,详情见：[jsDelivr挂了吗？](https://www.zhihu.com/question/533766356)
 
-[jsDelivr挂了吗？](https://www.zhihu.com/question/533766356)
+### 使用Nginx在自己的服务器上存储图片
 
-### 使用Nginx在自己的服务上存储图片
-
-终于来到重头戏，想法很简单（操作确实也很简单：使用宝塔面板将图片上传到服务器，然后对外暴露链接，这一步就需要用到Nginx。
+！重头戏在这，想法很简单（操作确实也很简单）：使用宝塔面板将图片上传到服务器，然后对外暴露链接，这一步就需要用到Nginx。
 
 你甚至不需要知道Nginx是什么（[Nginx 是什么、为什么、怎么用?](https://zhuanlan.zhihu.com/p/364588916)
 
@@ -57,7 +53,7 @@
 
   直接进入宝塔面板，文件管理中
 
-  ![](http://jiu99.online:8080/imgStore_build/2.png)
+  [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-qUmSaRLW-1661587908976)(https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe6406ac8e624785b017eb265c97fb89~tplv-k3u1fbpfcp-zoom-1.image)]
 
   **记住图片路径**
 
@@ -67,9 +63,9 @@
 
   在软件商店中找到Nginx，打击开设置=>配置修改
 
-  ![](http://jiu99.online:8080/imgStore_build/3.png)
+  [外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-aEmnS6wp-1661587908976)(https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/853f4b34314b4613b19f7ccf4eb2e4c0~tplv-k3u1fbpfcp-zoom-1.image)]
 
-  里面原先应该是有一个server的，在这个server的同级下贴入：
+  里面原先应该是有一个server的，在这个server的同级下(每个server对应一个服务）贴入：
 
   ```js
       server {
@@ -87,7 +83,7 @@
 
 - 放行监听端口
 
-  在宝塔面板和服务器控制台中分别放行8080端口
+  在**宝塔面板和服务器控制台中分别放行**8080端口
 
 - 测试
 
